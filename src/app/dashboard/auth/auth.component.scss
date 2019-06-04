@@ -1,0 +1,38 @@
+.main {
+  width: 100vw;
+  height: 100vh;
+}
+.auth {
+  //position: fixed;
+  height: 100vh;
+  overflow: hidden;
+ 
+
+  z-index: 2;
+  .auth-container {
+    height: 100vh;
+  }
+}
+.map {
+  height: 100vh;
+  overflow: hidden;
+  z-index: 0;
+
+  img {
+    height: 100%;
+    object-fit: cover !important;
+  }
+}
+.auth-container {
+  z-index: 1;
+  height: 100vh;
+}
+
+$resXXL: 1280px;
+$resXL: 1170px;
+$resL: 991px;
+$resM: 768px;
+$resS: 660px;
+$resXS: 500px;
+$resXXS: 435px;
+$resMin: 320px;

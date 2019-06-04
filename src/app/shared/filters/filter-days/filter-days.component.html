@@ -1,0 +1,10 @@
+<div class="filter-day tb-border--r4" fxLayout="column">
+  <!-- <p class="tb-padding--v-8 tb-typo--body1 tb-color--black-75">Choose Day:</p> -->
+  <mat-form-field class=" tb-border--r4">
+    <mat-select class="tb-typo--body1" (selectionChange)="_onDateChange($event)" panelClass="tb-color--black-75 tb-color-bg--white " [(ngModel)]="dayDefault">
+      <mat-option  *ngFor="let day of days" [value]="day.value">
+        {{day.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>

@@ -1,0 +1,420 @@
+@import "./variables";
+
+//brown
+
+  
+.app-color-text--brown {
+  color: map-get($app-brown, 500) !important;
+}
+.app-color--brown {
+  background-color: map-get($app-brown, 500) !important;
+}
+.app-color--brown-alpha {
+  background-color: rgba(
+    $color: map-get($app-brown, 500),
+    $alpha: 0.85
+  ) !important;
+}
+.app-color-text--brown-50 {
+  color: map-get($app-brown, 50) !important;
+}
+.app-color--brown-50 {
+  background-color: map-get($app-brown, 50) !important;
+}
+.app-color-text--brown-100 {
+  color: map-get($app-brown, 100) !important;
+}
+.app-color--brown-100 {
+  background-color: map-get($app-brown, 100) !important;
+}
+.app-color-text--brown-200 {
+  color: map-get($app-brown, 200) !important;
+}
+.app-color--brown-200 {
+  background-color: map-get($app-brown, 200) !important;
+}
+.app-color-text--brown-300 {
+  color: map-get($app-brown, 300) !important;
+}
+.app-color--brown-300 {
+  background-color: map-get($app-brown, 300) !important;
+}
+.app-color-text--brown-400 {
+  color: map-get($app-brown, 400) !important;
+}
+.app-color--brown-400 {
+  background-color: map-get($app-brown, 400) !important;
+}
+.app-color-text--brown-500 {
+  color: map-get($app-brown, 500) !important;
+}
+.app-color--brown-500 {
+  background-color: map-get($app-brown, 500) !important;
+}
+.app-color-text--brown-600 {
+  color: map-get($app-brown, 600) !important;
+}
+.app-color--brown-600 {
+  background-color: map-get($app-brown, 600) !important;
+}
+.app-color-text--brown-700 {
+  color: map-get($app-brown, 700) !important;
+}
+.app-color--brown-700 {
+  background-color: map-get($app-brown, 700) !important;
+}
+.app-color-text--brown-800 {
+  color: map-get($app-brown, 800) !important;
+}
+.app-color--brown-800 {
+  background-color: map-get($app-brown, 800) !important;
+}
+.app-color-text--brown-900 {
+  color: map-get($app-brown, 900) !important;
+}
+.app-color--brown-900 {
+  background-color: map-get($app-brown, 900) !important;
+}
+.app-color-text--brown-a100 {
+  color: map-get($app-brown, A100) !important;
+}
+.app-color--brown-a100 {
+  background-color: map-get($app-brown, A100) !important;
+}
+.app-color-text--brown-a200 {
+  color: map-get($app-brown, A200) !important;
+}
+.app-color--brown-a200 {
+  background-color: map-get($app-brown, A200) !important;
+}
+.app-color-text--brown-a400 {
+  color: map-get($app-brown, A400) !important;
+}
+.app-color--brown-a400 {
+  background-color: map-get($app-brown, A400) !important;
+}
+.app-color-text--brown-a700 {
+  color: map-get($app-brown, A700) !important;
+}
+.app-color--brown-a700 {
+  background-color: map-get($app-brown, A700) !important;
+}
+// red
+.app-color-text--red {
+  color: map-get($app-red, 500) !important;
+}
+.app-color--red {
+  background-color: map-get($app-red, 500) !important;
+}
+.app-color--red-alpha {
+  background-color: rgba(
+    $color: map-get($app-red, 500),
+    $alpha: 0.85
+  ) !important;
+}
+.app-color-text--red-50 {
+  color: map-get($app-red, 50) !important;
+}
+.app-color--red-50 {
+  background-color: map-get($app-red, 50) !important;
+}
+.app-color-text--red-100 {
+  color: map-get($app-red, 100) !important;
+}
+
+.app-color--red-100 {
+  background-color: map-get($app-red, 100) !important;
+}
+
+.app-color-text--red-200 {
+  color: map-get($app-red, 200) !important;
+}
+.app-color--red-200 {
+  background-color: map-get($app-red, 200) !important;
+}
+.app-color-text--red-300 {
+  color: map-get($app-red, 300) !important;
+}
+.app-color--red-300 {
+  background-color: map-get($app-red, 300) !important;
+}
+.app-color-text--red-400 {
+  color: map-get($app-red, 400) !important;
+}
+.app-color--red-400 {
+  background-color: map-get($app-red, 400) !important;
+}
+.app-color-text--red-500 {
+  color: map-get($app-red, 500) !important;
+}
+.app-color--red-500 {
+  background-color: map-get($app-red, 500) !important;
+}
+.app-color-text--red-600 {
+  color: map-get($app-red, 600) !important;
+}
+.app-color--red-600 {
+  background-color: map-get($app-red, 600) !important;
+}
+.app-color-text--red-700 {
+  color: map-get($app-red, 700) !important;
+}
+.app-color--red-700 {
+  background-color: map-get($app-red, 700) !important;
+}
+.app-color-text--red-800 {
+  color: map-get($app-red, 800) !important;
+}
+.app-color--red-800 {
+  background-color: map-get($app-red, 800) !important;
+}
+.app-color-text--red-900 {
+  color: map-get($app-red, 900) !important;
+}
+.app-color--red-900 {
+  background-color: map-get($app-red, 900) !important;
+}
+.app-color-text--red-a100 {
+  color: map-get($app-red, A100) !important;
+}
+.app-color--red-a100 {
+  background-color: map-get($app-red, A100) !important;
+}
+.app-color-text--red-a200 {
+  color: map-get($app-red, A200) !important;
+}
+.app-color--red-a200 {
+  background-color: map-get($app-red, A200) !important;
+}
+.app-color-text--red-a400 {
+  color: map-get($app-red, A400) !important;
+}
+.app-color--red-a400 {
+  background-color: map-get($app-red, A400) !important;
+}
+.app-color-text--red-a700 {
+  color: map-get($app-red, A700) !important;
+}
+.app-color--red-a700 {
+  background-color: map-get($app-red, A700) !important;
+}
+// greeb
+.app-color-text--green {
+  color: map-get($app-green, 500) !important;
+}
+.app-color--green {
+  background-color: map-get($app-green, 500) !important;
+}
+.app-color--green-alpha {
+  background-color: rgba(
+    $color: map-get($app-green, 500),
+    $alpha: 0.85
+  ) !important;
+}
+.app-color-text--green-50 {
+  color: map-get($app-green, 50) !important;
+}
+.app-color--green-50 {
+  background-color: map-get($app-green, 50) !important;
+}
+.app-color-text--green-100 {
+  color: map-get($app-green, 100) !important;
+}
+.app-color--green-100 {
+  background-color: map-get($app-green, 100) !important;
+}
+.app-color-text--green-200 {
+  color: map-get($app-green, 200) !important;
+}
+.app-color--green-200 {
+  background-color: map-get($app-green, 200) !important;
+}
+.app-color-text--green-300 {
+  color: map-get($app-green, 300) !important;
+}
+.app-color--green-300 {
+  background-color: map-get($app-green, 300) !important;
+}
+.app-color-text--green-400 {
+  color: map-get($app-green, 400) !important;
+}
+.app-color--green-400 {
+  background-color: map-get($app-green, 400) !important;
+}
+.app-color-text--green-500 {
+  color: map-get($app-green, 500) !important;
+}
+.app-color--green-500 {
+  background-color: map-get($app-green, 500) !important;
+}
+.app-color-text--green-600 {
+  color: map-get($app-green, 600) !important;
+}
+.app-color--green-600 {
+  background-color: map-get($app-green, 600) !important;
+}
+.app-color-text--green-700 {
+  color: map-get($app-green, 700) !important;
+}
+.app-color--green-700 {
+  background-color: map-get($app-green, 700) !important;
+}
+.app-color-text--green-800 {
+  color: map-get($app-green, 800) !important;
+}
+.app-color--green-800 {
+  background-color: map-get($app-green, 800) !important;
+}
+.app-color-text--green-900 {
+  color: map-get($app-green, 900) !important;
+}
+.app-color--green-900 {
+  background-color: map-get($app-green, 900) !important;
+}
+.app-color-text--green-a100 {
+  color: map-get($app-green, A100) !important;
+}
+.app-color--green-a100 {
+  background-color: map-get($app-green, A100) !important;
+}
+.app-color-text--green-a200 {
+  color: map-get($app-green, A200) !important;
+}
+.app-color--green-a200 {
+  background-color: map-get($app-green, A200) !important;
+}
+.app-color-text--green-a400 {
+  color: map-get($app-green, A400) !important;
+}
+.app-color--green-a400 {
+  background-color: map-get($app-green, A400) !important;
+}
+.app-color-text--green-a700 {
+  color: map-get($app-green, A700) !important;
+}
+.app-color--green-a700 {
+  background-color: map-get($app-green, A700) !important;
+}
+// pink
+.app-color-text--pink {
+  color: map-get($app-pink, 500) !important;
+}
+.app-color--pink {
+  background-color: map-get($app-pink, 500) !important;
+}
+.app-color--pink-alpha {
+  background-color: rgba(
+    $color: map-get($app-pink, 500),
+    $alpha: 0.85
+  ) !important;
+}
+.app-color-text--pink-50 {
+  color: map-get($app-pink, 50) !important;
+}
+.app-color--pink-50 {
+  background-color: map-get($app-pink, 50) !important;
+}
+.app-color-text--pink-100 {
+  color: map-get($app-pink, 100) !important;
+}
+.app-color--pink-100 {
+  background-color: map-get($app-pink, 100) !important;
+}
+
+.app-color-text--pink-200 {
+  color: map-get($app-pink, 200) !important;
+}
+.app-color--pink-200 {
+  background-color: map-get($app-pink, 200) !important;
+}
+.app-color-text--pink-300 {
+  color: map-get($app-pink, 300) !important;
+}
+.app-color--pink-300 {
+  background-color: map-get($app-pink, 300) !important;
+}
+.app-color-text--pink-400 {
+  color: map-get($app-pink, 400) !important;
+}
+.app-color--pink-400 {
+  background-color: map-get($app-pink, 400) !important;
+}
+.app-color-text--pink-500 {
+  color: map-get($app-pink, 500) !important;
+}
+.app-color--pink-500 {
+  background-color: map-get($app-pink, 500) !important;
+}
+.app-color-text--pink-600 {
+  color: map-get($app-pink, 600) !important;
+}
+.app-color--pink-600 {
+  background-color: map-get($app-pink, 600) !important;
+}
+.app-color-text--pink-700 {
+  color: map-get($app-pink, 700) !important;
+}
+.app-color--pink-700 {
+  background-color: map-get($app-pink, 700) !important;
+}
+.app-color-text--pink-800 {
+  color: map-get($app-pink, 800) !important;
+}
+.app-color--pink-800 {
+  background-color: map-get($app-pink, 800) !important;
+}
+.app-color-text--pink-900 {
+  color: map-get($app-pink, 900) !important;
+}
+.app-color--pink-900 {
+  background-color: map-get($app-pink, 900) !important;
+}
+.app-color-text--pink-a100 {
+  color: map-get($app-pink, A100) !important;
+}
+.app-color--pink-a100 {
+  background-color: map-get($app-pink, A100) !important;
+}
+.app-color-text--pink-a200 {
+  color: map-get($app-pink, A200) !important;
+}
+.app-color--pink-a200 {
+  background-color: map-get($app-pink, A200) !important;
+}
+.app-color-text--pink-a400 {
+  color: map-get($app-pink, A400) !important;
+}
+.app-color--pink-a400 {
+  background-color: map-get($app-pink, A400) !important;
+}
+.app-color-text--pink-a700 {
+  color: map-get($app-pink, A700) !important;
+}
+.app-color--pink-a700 {
+  background-color: map-get($app-pink, A700) !important;
+}
+// blue
+.app-color--blue {
+  background-color: map-get($app-blue, A700) !important;
+}
+.app-color-text--blue {
+  color: map-get($app-blue, A700) !important;
+}
+.app-color--blue-alpha {
+  background-color: rgba(
+    $color: map-get($app-blue, 500),
+    $alpha: 0.85
+  ) !important;
+}
+// blue
+.app-color--amber-alpha {
+  // color: #e9ae18;
+  background-color: rgba($color: #dca416, $alpha: 0.85) !important;
+}
+// brown
+.app-color--brown-alpha {
+  background-color: rgba(
+    $color: map-get($app-brown, 500),
+    $alpha: 0.85
+  ) !important;
+}

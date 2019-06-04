@@ -1,0 +1,97 @@
+.app-progress--rounded{
+    .mat-progress-bar {
+        border-radius: 8px !important;
+    }
+
+    
+    .mat-progress-bar-fill::after{
+        border-radius: 8px !important;
+    }
+}
+
+.widget-progress {
+    .mat-progress-bar {
+        height: 6px;
+        border-radius: 3px;
+        // max-width: 64px;
+        min-width: 56px;
+        .mat-progress-bar-background{
+            width: 100%;
+            background-color: rgba($color: #000000, $alpha: 0.0);
+        }
+    }
+    
+    &-blue {
+        
+        .mat-progress-bar {
+            border-radius: 8px !important;
+        }
+
+        .mat-progress-bar-buffer {
+            background-color: map-get($app-blue, 100);
+        }
+        
+        .mat-progress-bar-fill::after{
+            border-radius: 8px !important;
+            background-color: map-get($app-blue, 500);
+        }
+    }
+    &-red {
+        
+        .mat-progress-bar {
+            border-radius: 8px !important;
+        }
+
+        .mat-progress-bar-buffer {
+            background-color: map-get($app-red, 100);
+        }
+        
+        .mat-progress-bar-fill::after{
+            border-radius: 8px !important;
+            background-color: map-get($app-red, 500);
+        }
+    }
+    &-orange {
+        
+        .mat-progress-bar {
+            border-radius: 8px !important;
+        }
+
+        .mat-progress-bar-buffer {
+            background-color: map-get($app-orange, 100);
+        }
+        .mat-progress-bar-fill::after{
+            border-radius: 8px !important;
+            background-color: map-get($app-orange, 500);
+        }
+    }
+    &-amber {
+        
+        .mat-progress-bar {
+            border-radius: 8px !important;
+        }
+
+        .mat-progress-bar-buffer {
+            background-color: map-get($app-amber, 100);
+        }
+        .mat-progress-bar-fill::after{
+            border-radius: 8px !important;
+            background-color: map-get($app-amber, 500);
+        }
+    }
+    &-green {
+
+        .mat-progress-bar {
+            border-radius: 8px !important;
+        }
+
+        .mat-progress-bar-buffer {
+            background-color: map-get($app-green, 100);
+        }
+        
+        .mat-progress-bar-fill::after{
+            border-radius: 8px !important;
+            background-color: map-get($app-green, 500);
+        }
+    }
+}

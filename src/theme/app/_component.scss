@@ -1,0 +1,41 @@
+.search-area-app {
+    max-width: 480px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.224);
+    input {
+        max-width: 480px;
+        height: 100%;
+        padding: 10px 5px;
+        border: 0;
+        background-color: unset;
+    }
+    input:focus {
+        outline: 0;
+        background: transparent;
+    }
+    
+}
+
+.app-table{
+    overflow: auto;
+    .mat-table{
+        background: unset;
+    }
+
+    .mat-paginator{
+        background: unset;
+    }
+        tr:nth-child(even){
+            background-color: #F8F9Fa;
+    
+        }
+        tr:nth-child(odd){
+            background-color: #ffffff;
+    
+        }
+    
+}
+
+.mat-checkbox-inner-container{
+    height: 16px !important;
+    width: 16px !important;
+}

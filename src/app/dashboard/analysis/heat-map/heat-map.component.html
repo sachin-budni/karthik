@@ -1,0 +1,58 @@
+<div class="delayed-report-card tb-card--thin tb-border--r4 tb-color-bg--white tb-padding--36 " fxLayout="column">
+  <div class="" fxLayoutAlign="space-between center">
+    <p class="tb-typo--h5 tb-color--black-75 tb-padding--v-12 tb-font-weight--bold">Trip Heatmap</p>
+
+    <!-- <mat-button-toggle-group appearance="legacy" name="fontStyle" aria-label="Font Style" value="bar">
+      <mat-button-toggle class="tb-color-bg--white-38" value="line" matTooltip="Time">
+        <p class="tb-typo--h6 tb-color--black tb-padding--8-12">Time</p>
+      </mat-button-toggle>
+      <mat-button-toggle class="tb-color-bg--white-38" value="bar" matTooltip="Count">
+        <p class="tb-typo--h6 tb-color--black tb-padding--8-12">Count</p>
+      </mat-button-toggle>
+    </mat-button-toggle-group> -->
+
+    <app-filter-days (rangeChange)="_onFilterRangeChange($event)"></app-filter-days>
+
+  </div>
+  <div class="tb-padding--4"></div>
+
+  <!-- <app-delayed-report-tab></app-delayed-report-tab> -->
+
+  <div tb-select-group (selectionChange)="onSelectionGroupChange($event)" class="report-tabs" fxLayout="row wrap" fxLayoutGap="8px">
+    <button mat-button tb-select-item selectedClass="tb-card--thin tb-color--white tb-color-bg--black-75" class="tab tb-typo--body1 tb-color--black-75" [value]="1" [checked]="true">
+      Source
+    </button>
+    <button mat-button tb-select-item selectedClass="tb-card--thin tb-color--white tb-color-bg--black-75" class="tab tb-typo--body1 tb-color--black-75" [value]="2">
+      Destination
+    </button>
+
+    
+  </div>
+
+  
+  <div class="tb-padding--4"></div>
+
+  <div fxLayout="row" fxLayout.xs="column" >
+    <div fxFlexOrder.xs="1" fxFlex="40">
+
+      <app-heat-map-detail [value]="_mRawValue"></app-heat-map-detail>
+    
+  
+
+    </div>
+    <agm-map fxFlex [styles]="style" [latitude]="lat" [longitude]="lng" [zoom]="4" (mapReady)="onMapLoad($event)" [scrollwheel]="false">
+      <!-- <agm-marker [iconUrl]='{"url": "./assets/img/truck.svg","scaledSize": {"height": 40, "width": 40}}' *ngFor="let m of markers; let i = index" [latitude]="m.lat" [longitude]="m.lng" [label]="m.label"
+        [agmFitBounds]="true">
+    
+      </agm-marker> -->
+  
+  
+      <agm-marker-cluster imagePath="https://raw.githubusercontent.com/googlemaps/v3-utility-library/master/markerclustererplus/images/m">
+        <agm-marker *ngFor="let m of _mPointers; let i = index" [latitude]="m['0']" [longitude]="m['1']">
+        </agm-marker><!-- multiple markers -->
+      </agm-marker-cluster>
+    </agm-map>
+  </div>
+  
+  <!-- <app-chart-delayed-report></app-chart-delayed-report> -->
+</div>

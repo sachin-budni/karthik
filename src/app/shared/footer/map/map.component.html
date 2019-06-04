@@ -1,0 +1,6 @@
+<agm-map [styles]="style"  [zoom]="16" [latitude]="lat" [longitude]="lng" >
+    <agm-marker *ngFor="let m of markers; let i = index" [latitude]="m.lat" [longitude]="m.lng" [label]="m.label"
+      [agmFitBounds]="true">
+  
+    </agm-marker>
+  </agm-map>

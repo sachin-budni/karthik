@@ -1,0 +1,81 @@
+<div class="login tb-color-bg--white tb-padding--36" fxLayout="column" fxLayoutAlign.xs="center center" fxLayoutAlign.lt-md="center center" fxLayoutAlign.md="center center"> 
+  <div fxLayout="column">
+      <h3 class="tb-typo--h3 tb-font-weight--normal tb-text--align-left">
+          Intugine
+        </h3>
+        <span class="bottom-stroke " >
+        </span>
+  </div>
+
+  <div class="tb-padding--36"></div>
+
+  <h2 class=" tb-typo--h2 tb-font-weight--bold">Intu-Track Analysis</h2>
+  <div class="tb-padding--24"></div>
+  <p class=" tb-typo--h5  tb-color--grey-600 tb-padding--v-4">Welcome back,</p>
+  <p class=" tb-typo--h5  tb-color--grey-600">Please login to your account</p>
+  <div class="tb-padding--28"></div>
+  <div class="form" >
+
+
+    <form [formGroup]="_mFormGroup" (ngSubmit)="onSubmit()" fxLayout="column">
+      <div class="input_field" fxLayout="column" >
+
+        <div class="" fxLayout="column">
+          <mat-form-field [floatLabel]="'never'">
+              <input matInput formControlName="username" placeholder="username" type='text'>
+              <mat-error>You must enter a value</mat-error>
+          </mat-form-field>
+      </div>
+      <div class="tb-padding--4"></div>
+
+      <div class="" fxLayout="column">
+          <mat-form-field [floatLabel]="'never'">
+              <input matInput formControlName="password" placeholder="password" type='password'>
+              <mat-error>You must enter a value</mat-error>
+          </mat-form-field>
+      </div>
+      <!-- <div class="tb-card--normal tb-padding--12-16 tb-border--r4" fxLayout="column">
+        <span class=" tb-typo--h6 tb-color--grey-900">Username</span>
+        <mat-form-field [floatLabel]="'never'">
+          <input matInput formControlName="username" placeholder="Enter username" type='text'>
+          <mat-error>You must enter a value</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="tb-padding--4"></div>
+
+      <div class="tb-card--normal tb-padding--12-16 tb-border--r4" fxLayout="column">
+        <span class=" tb-typo--h6 tb-color--grey-900">Password</span>
+        <mat-form-field [floatLabel]="'never'">
+          <input matInput formControlName="password" placeholder="Enter password" type='password'>
+          <mat-error>You must enter a value</mat-error>
+        </mat-form-field>
+      </div> -->
+    </div>
+
+        <div  fxLayout="column">
+          <!-- <div class="tb-underline tb-theme--primary tb-cursor--pointer tb-padding--v-24">
+            <p  class="tb-typo--body2 tb-theme--primary ">
+                Forgot
+                Password ?
+            </p></div> -->
+          <div class="tb-padding--v-8"></div>
+
+          <div fxLayout="row" fxLayoutGap="12px" fxLayoutAlign.xs="center center" fxLayoutAlign.lt-md="center center" fxLayoutAlign.md="center center">
+
+            <button class=" tb-border--r8 tb-typo--h5 tb-button--h36 tb-padding--h-36-i" mat-raised-button
+              color="primary"  [disabled]="!_mFormGroup.valid" type="submit" >
+              Login
+            </button>
+
+            <!-- <button class=" tb-border--r8 tb-typo--h5 tb-button--h36 tb-padding--h-36-i" mat-stroked-button
+              color="secondary" type="submit" [disabled]="!_mFormGroup.valid">
+              Sign Up
+            </button> -->
+
+          </div>
+
+
+        </div>
+    </form>
+  </div>
+</div>

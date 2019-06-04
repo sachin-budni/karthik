@@ -1,0 +1,39 @@
+<div class="tb-height--full" fxLayout="column">
+
+  <!-- top nav -->
+
+  <mat-toolbar class="tb-flex--shrink-0 tb-card--thin tb-theme--primary-bg">
+    <div class="tb-width--full" fxLayout="row" fxLayoutAlign="start center">
+      <div class="tb-flex--align-items" fxLayout="row">
+        <div class="logo_area ">
+          <img class="tb-avatar" src="assets/img/logo.png" alt="">
+        </div>
+        <p class="tb-typo--h3 tb-color--white">Intugine</p>
+      </div>
+      <div fxFlex></div>
+      <div class="tb-padding--left-16">
+        <a routerLink="/visual" routerLinkActive="tb-card--thin tb-color-bg--white  tb-color--grey-800" class="tb-typo--h5 tb-color--white tb-padding--h-36  tb-cursor--pointer" mat-button>Home</a>
+
+        <a routerLink="/trips" routerLinkActive="tb-card--thin tb-color-bg--white  tb-color--grey-800" class="tb-typo--h5 tb-color--white tb-padding--h-36  tb-cursor--pointer" mat-button>Trips</a>
+
+        <a routerLink="/timeline" routerLinkActive="tb-card--thin tb-color-bg--white  tb-color--grey-800" class="tb-typo--h5 tb-color--white tb-padding--h-36  tb-cursor--pointer" mat-button>Timeline</a>
+
+        <a routerLink="/analysis" routerLinkActive="tb-card--thin tb-color-bg--white  tb-color--grey-800" class="tb-typo--h5 tb-color--white tb-padding--h-36  tb-cursor--pointer" mat-button>Analysis</a>
+
+        <a routerLink="/consents" routerLinkActive="tb-card--thin tb-color-bg--white  tb-color--grey-800" class="tb-typo--h5 tb-color--white tb-padding--h-36  tb-cursor--pointer" mat-button>Consents</a>
+
+      </div>
+    </div>
+  </mat-toolbar>
+
+
+  <!-- main div -->
+  <div fxFlex class="tb-overflow--auto">
+
+    <router-outlet></router-outlet>
+
+  </div>
+
+
+
+</div>

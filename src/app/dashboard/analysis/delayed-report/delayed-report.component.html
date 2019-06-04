@@ -1,0 +1,49 @@
+<div class="delayed-report-card tb-card--thin tb-border--r4 tb-color-bg--white tb-padding--36 " fxLayout="column">
+  <div class="" fxLayoutAlign="space-between center">
+    <p class="tb-typo--h5 tb-color--black-75 tb-padding--v-12 tb-font-weight--bold">Delayed Report</p>
+
+ <mat-button-toggle-group (change)="onToggleGroupChange($event)" appearance="legacy" name="fontStyle" aria-label="Font Style" value="percent">
+      <mat-button-toggle class="tb-color-bg--white-38" value="percent" matTooltip="Percentage">
+        <p class="tb-typo--h6  tb-padding--8-12">Percentage</p>
+      </mat-button-toggle>
+      <mat-button-toggle class="tb-color-bg--white-38" value="absolute" matTooltip="Absolute">
+        <p class="tb-typo--h6 tb-padding--8-12">Absolute</p>
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+    <app-filter-days (rangeChange)="_onFilterRangeChange($event)"></app-filter-days>
+
+  </div>
+  <div class="tb-padding--4"></div>
+
+  <!-- <app-delayed-report-tab></app-delayed-report-tab> -->
+<div fxLayout="row">
+  <div tb-select-group (selectionChange)="onSelectionGroupChange($event)" class="report-tabs" fxLayout="row wrap" fxLayoutGap="8px">
+    <button mat-button tb-select-item selectedClass="tb-card--thin tb-color--white tb-color-bg--black-75" class="tab tb-typo--body1 tb-color--black-75" [value]="1" [checked]="true">
+      Transporter </button>
+    <button mat-button tb-select-item selectedClass="tb-card--thin tb-color--white tb-color-bg--black-75" class="tab tb-typo--body1 tb-color--black-75" [value]="2">
+      Lane
+    </button>
+    <button mat-button tb-select-item selectedClass="tb-card--thin tb-color--white tb-color-bg--black-75" class="tab tb-typo--body1 tb-color--black-75" [value]="3" >
+      Client
+    </button>
+    
+  </div>
+  <div fxFlex></div>
+  <div fxLayout="row" fxLayoutGap="8px" fxLayoutAlign="space-around center">
+    <p class="tb-typo--body2 tb-color--grey-800">Delay :</p>
+    <!-- <p class="tb-typo--h5 tb-color--black-75 tb-padding--v-12 tb-font-weight--bold">Delay :</p> -->
+    <mat-slider [max]="12" [min]="2" [step]="2" [(ngModel)]="matSliderValue" (change)="matSliderData($event)" [thumbLabel]="true"></mat-slider>
+  </div>
+</div>
+
+  <div fxLayout="row" fxLayoutGap="4px" fxLayoutAlign="center center">
+    <widget-legend-item backgroundClass="app-color-bg--on-time" legendField="On time"></widget-legend-item>
+    <widget-legend-item backgroundClass="app-color-bg--delayed-less" legendField="< {{matSliderValue}}hrs"></widget-legend-item>
+    <widget-legend-item backgroundClass="app-color-bg--delayed-more" legendField="> {{matSliderValue}}hrs"></widget-legend-item>
+  </div>
+  <div class="tb-padding--4"></div>
+  <app-chart-bar-highstock fxFlex [model]="_mChartDelayed"></app-chart-bar-highstock>
+ 
+  <!-- <app-chart-bar fxFlex class="pie-chart-main" [model]="_mChartDelayed" [isLabelHidden]="true"></app-chart-bar> -->
+  <!-- <app-chart-delayed-report></app-chart-delayed-report> -->
+</div>

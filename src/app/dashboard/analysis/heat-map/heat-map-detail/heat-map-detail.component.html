@@ -1,0 +1,44 @@
+<div fxLayout="column">
+  <h5 class="tb-padding--v-16 tb-typo--h4">Top Source</h5>
+
+  <div class="tb-padding--right-24" fxLayout="column">
+    <div class="tb-line"></div>
+    <div *ngFor="let item of _mOverviewSource.items" fxLayout="column">
+
+      <div class="tb-flex--align-items tb-padding--top-10" fxLayout="row">
+        <p class="tb-typo--body2 tb-color--grey-700  tb-font-weight--bold">Source :</p>
+        <p class="tb-typo--body1 tb-color--grey-800 tb-padding--h-8">{{item.name}}
+        </p>
+      </div>
+      <div class="tb-flex--align-items" fxLayout="row">
+        <widget-progress fxFlex progressClass="widget-progress-blue" class="progress" [progress]="item.countPercent">
+        </widget-progress>
+        <p class="tb-typo--h5 tb-width--40 tb-text--align-right tb-color--grey-800 tb-font-weight--bold">
+          {{item.count}}</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="tb-padding--4"></div>
+
+  <h5 class="tb-padding--v-16 tb-typo--h4">Top Destination</h5>
+  <div class="tb-padding--right-24" fxLayout="column">
+    <div class="tb-line"></div>
+    <div *ngFor="let item of _mOverviewDest.items" fxLayout="column">
+      <div class="tb-flex--align-items tb-padding--top-10" fxLayout="row">
+        <p class="tb-typo--body2 tb-color--grey-700">Destination :</p>
+        <p class="tb-typo--body1 tb-color--grey-800 tb-padding--h-8">{{item.name}}
+        </p>
+      </div>
+      <div class="tb-flex--align-items" fxLayout="row">
+        <widget-progress fxFlex progressClass="widget-progress-blue" class="progress" [progress]="item.countPercent">
+        </widget-progress>
+        <p class="tb-typo--h5 tb-width--40 tb-text--align-right tb-color--grey-800 tb-font-weight--bold">
+          {{item.count}}</p>
+      </div>
+
+    </div>
+  </div>
+
+</div>

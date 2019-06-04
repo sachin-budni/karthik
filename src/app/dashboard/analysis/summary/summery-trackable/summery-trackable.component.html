@@ -1,0 +1,90 @@
+<!-- left card -->
+<div class="summary-card tb-card--thin tb-color-bg--white tb-border--r4 tb-width--full tb-padding--24" fxLayout="column">
+  <div fxLayout="row">
+
+    <div tb-select-group (selectionChange)="onSelectionGroupChange($event)" class="report-tabs" fxLayout="row wrap"
+      fxLayoutGap="8px">
+      <button mat-button tb-select-item selectedClass="tb-card--thin tb-color--white tb-color-bg--black-75"
+        class="tab tb-typo--body1 tb-color--black-75" [value]="1" [checked]="true">
+        Trackable
+      </button>
+      <button mat-button tb-select-item selectedClass="tb-card--thin tb-color--white tb-color-bg--black-75"
+        class="tab tb-typo--body1 tb-color--black-75" [value]="2">
+        Concent
+      </button>
+    </div>
+    <!-- <p class="tb-typo--h6 tb-color--black-75 tb-font-weight--bold">Distribution</p> -->
+    <div fxFlex></div>
+    <app-filter-days></app-filter-days>
+  </div>
+
+
+  <div fxLayout="row" fxLayout.xs="column">
+    <div fxLayout="column" fxFlex.gt-xs="50">
+      <div class="tb-position--relative" fxFlex>
+        <app-chart-doughnut class="pie-chart-main tb-position--relative" [model]="_mLeftChart" [isLabelHidden]="true">
+        </app-chart-doughnut>
+        <span class="overlayed-label tb-position--absolute">
+          {{_mLeftOverview.percent}}%
+        </span>
+      </div>
+      <div class="tb-padding--12"></div>
+      <!-- <app-chart-trackable-distribution></app-chart-trackable-distribution> -->
+      <ng-container *ngIf="_mLeftIsTrackable">
+        <div fxLayout="row" fxLayoutGap="12px" fxLayoutAlign="center center">
+          <widget-legend-item backgroundClass="app-color-bg--trackable" legendField="Trackable"></widget-legend-item>
+          <widget-legend-item backgroundClass="app-color-bg--transporter" legendField="Un-Trackable">
+          </widget-legend-item>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="!_mLeftIsTrackable">
+        <div fxLayout="row" fxLayoutGap="12px" fxLayoutAlign="center center">
+          <widget-legend-item backgroundClass="app-color-bg--trackable" legendField="Concent Allowed">
+          </widget-legend-item>
+          <widget-legend-item backgroundClass="app-color-bg--transporter" legendField="Concent not Allowed">
+          </widget-legend-item>
+        </div>
+      </ng-container>
+    </div>
+
+    <!-- overview -->
+    <div class="tb-margin--v-16 tb-width--full" fxLayout="column" fxFlex.gt-xs="50">
+      <p class="tb-typo--h6 tb-color--black-75 tb-padding--v-4 tb-font-weight--bold">Most Frequent</p>
+      <div class="tb-flex--align-items tb-padding--top-10" fxLayout="row">
+        <p class="tb-typo--body2 tb-color--black-54  tb-font-weight--bold">Lane :</p>
+        <p class="tb-typo--body1 tb-color--black-75 tb-padding--h-8 tb-font-weight--bold">
+          {{_mLeftOverview.lane.name}}</p>
+      </div>
+      <div class="tb-flex--align-items" fxLayout="row">
+        <widget-progress fxFlex progressClass="widget-progress-green" class="progress"
+          [progress]="_mLeftOverview.lane.countPercent"></widget-progress>
+        <p class="tb-typo--h5 tb-width--40 tb-text--align-right tb-color--grey-800 tb-font-weight--bold">
+          {{_mLeftOverview.lane.count}}</p>
+      </div>
+
+      <div class="tb-flex--align-items tb-padding--top-10" fxLayout="row">
+        <p class="tb-typo--body2 tb-color--black-54  tb-font-weight--bold">Customer :</p>
+        <p class="tb-typo--body1 tb-color--black-75 tb-padding--h-8 tb-font-weight--bold">
+          {{_mLeftOverview.customer.name}}</p>
+      </div>
+      <div class="tb-flex--align-items" fxLayout="row">
+        <widget-progress fxFlex progressClass="widget-progress-green" class="progress"
+          [progress]="_mLeftOverview.customer.countPercent"></widget-progress>
+        <p class="tb-typo--h5 tb-width--40 tb-text--align-right tb-color--grey-800 tb-font-weight--bold">
+          {{_mLeftOverview.customer.count}}</p>
+      </div>
+      <div class="tb-flex--align-items tb-padding--top-10" fxLayout="row">
+        <p class="tb-typo--body2 tb-color--black-54  tb-font-weight--bold">Vendor :</p>
+        <p class="tb-typo--body1 tb-color--black-75 tb-padding--h-8 tb-font-weight--bold">
+          {{_mLeftOverview.vendor.name}}</p>
+      </div>
+      <div class="tb-flex--align-items" fxLayout="row">
+        <widget-progress fxFlex progressClass="widget-progress-green" class="progress"
+          [progress]="_mLeftOverview.vendor.countPercent"></widget-progress>
+        <p class="tb-typo--h5 tb-width--40 tb-text--align-right tb-color--grey-800 tb-font-weight--bold">
+          {{_mLeftOverview.vendor.count}}</p>
+      </div>
+    </div>
+  </div>
+</div>

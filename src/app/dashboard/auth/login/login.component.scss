@@ -1,0 +1,33 @@
+@import "~@angular/material/theming";
+@import "./../../../../theme/app-core/index";
+@include mat-core();
+$dark-primary: mat-palette($app-blue);
+$dark-accent: mat-palette($app-green);
+$dark-warn: mat-palette($app-pink);
+
+$dark-theme: mat-light-theme($dark-primary, $dark-accent, $dark-warn);
+
+@include mat-button-theme($dark-theme);
+
+@include mat-input-theme($dark-theme);
+
+@import "./../../../../theme/v2/core/typography/variables";
+@import "./../../../../theme/v2/core/typography/mixin";
+
+@each $typo in map-keys($tb-typo-map) {
+  .tb-typo--#{$typo} {
+    @include tb-typo($typo);
+  }
+}
+.bottom-stroke {
+  border-bottom: 3px solid #396cf6;
+  width: 20px;
+  border-radius: 16px;
+}
+.input_field {
+  min-width: 300px;
+}
+
+
+
+

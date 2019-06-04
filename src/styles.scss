@@ -1,0 +1,115 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+@include mat-core();
+@import "theme/app-core/index";
+@import "theme/v2/theme/variables";
+
+// $tb-theme--primary:  #323D4A;
+// $tb-theme--secondary:#FF303E;
+
+
+$tb-theme-primary: #1F4C9D;
+$tb-theme-primary-dark: #333D84;
+$tb-theme-primary-light:#CCDDFC ;
+$tb-theme-secondary: #3B3F44 ;
+$tb-theme-secondary-dark: #292A2D;
+
+$dark-primary: mat-palette($app-grey);
+$dark-accent : mat-palette($app-green);
+$dark-warn : mat-palette($mat-red);
+$dark-theme : mat-light-theme($dark-primary, $dark-accent, $dark-warn);
+
+$dark1-theme : mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+@include angular-material-theme($dark-theme);
+
+// @include mat-select-theme($dark1-theme);
+// @include mat-radio-theme($dark1-theme);
+// @include mat-radio-theme($dark1-theme);
+html {
+    height: 100%;
+}
+
+html::-webkit-scrollbar {
+    background: #bdbdbd;
+    width: 14px;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: #323232;
+}
+
+*::-webkit-scrollbar {
+    background: #bdbdbd;
+    width: 14px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: #323232;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    background: #f9f9f9;
+    * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    } // margin-left: 0 !important;
+    // margin-right: 0 !important;
+}
+h1,h2,h3,h4,h5,h6,p{
+    margin: 0;
+}
+
+.app-background {
+    background-color: #FAFDFD;
+}
+@import "theme/index";
+// @import "theme/dependent/index";
+@import "theme/v2/class";
+
+// @import "~nouislider/distribute/nouislider.min.css";
+
+
+
+
+@media screen and (max-width: 1910px) {
+    :root {
+        font-size: 86%;
+       
+      }
+}
+@media screen and (max-width: 1380px) {
+    :root {
+        font-size: 78%;
+       
+      }
+}
+
+
+//////// custom
+
+$dark1-primary: mat-palette($app-grey);
+$dark1-accent : mat-palette($app-blue);
+$dark1-warn : mat-palette($mat-red);
+
+$dark1-theme : mat-dark-theme($dark1-primary, $dark1-accent, $dark1-warn);
+.unicorn-dark-theme {
+    @include angular-material-theme($dark1-theme);
+  }
+
+//   $dark2-primary: mat-palette($app-blue);
+// $dark2-accent : mat-palette($app-red);
+// $dark2-warn : mat-palette($mat-red);
+
+// $dark1-theme : mat-dark-theme($dark2-primary, $dark2-accent, $dark2-warn);
+
+//   .app-caution{
+//     @include angular-material-theme($dark1-theme);
+
+//   }
+// @include mat-select-theme($dark-theme);
+// @include mat-radio-theme($dark-theme);
+
+// @import "~ion-rangeslider/css/ion.rangeSlider.css";
+// @import "~ion-rangeslider/css/ion.rangeSlider.skinFlat.css";

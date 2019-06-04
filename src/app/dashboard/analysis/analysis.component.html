@@ -1,0 +1,27 @@
+<div  class="main tb-color-bg--white tb-position--relative"  fxLayout="column">
+    <div class=" tb-padding--24" fxLayout="column">
+        <!-- <div fxLayout="row">
+            <p class="tb-typo--h5 tb-color--black-75 tb-padding--top-16 tb-font-weight--bold" fxFlex>Overview</p>
+            <app-filter-days></app-filter-days>
+        </div> -->
+
+
+        <app-overview></app-overview>
+        <div class="tb-padding--4"></div>
+        <p class="tb-typo--h5 tb-color--black-75 tb-padding--v-12 tb-font-weight--bold">Summary</p>
+
+        <app-summary></app-summary>
+        <div class="tb-padding--16"></div>
+        <app-delayed-report></app-delayed-report>
+
+        <div class="tb-padding--16"></div>
+        <app-heat-map></app-heat-map>
+
+
+    </div>
+    <section class="tb-top tb-width--full tb-position--absolute" *ngIf="_mInProgress">
+        <mat-progress-bar [color]="'primary'" mode="indeterminate">
+        </mat-progress-bar>
+    </section>
+    <!-- <app-footer></app-footer> -->
+</div>

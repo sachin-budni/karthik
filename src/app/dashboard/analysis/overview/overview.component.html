@@ -1,0 +1,222 @@
+<div fxLayout="row">
+  <p class="tb-typo--h5 tb-color--black-75 tb-padding--top-16 tb-font-weight--bold" fxFlex>Overview</p>
+  <app-filter-days (rangeChange)="_onFilterRangeChange($event)"></app-filter-days>
+</div>
+
+
+<div class="tb-width--full" fxLayout="row" fxLayout.xs="column" fxLayout.sm="column"
+  fxLayoutAlign="space-between center">
+  <div
+    class="overview-card tb-color-bg--white tb-margin--v-16 app-card--intugine tb-card--up tb-border--r4 tb-width--full tb-padding--24"
+    fxLayout="column" fxFlex="32">
+    <div fxLayout="row">
+      <p class="tb-typo--h5 tb-color--black-75 tb-font-weight--bold">Total Trip</p>
+      <div fxFlex></div>
+      <div class="tb-flex--align-items " fxLayout="row" *ngIf="_mOverviewTrip && _mOverviewTrip.trend">
+        <p class="tb-typo--h6 tb-font-weight--bold" [class.app-color-text--green-400]="_mOverviewTrip.trend>0"
+          [class.app-color-text--red-400]="_mOverviewTrip.trend < 0">{{_mOverviewTrip.trend}}</p>
+        <mat-icon *ngIf="_mOverviewTrip.trend>0" class="tb-icon--16 tb-padding--h-4 app-color-text--green-400">
+          trending_up</mat-icon>
+        <mat-icon *ngIf="_mOverviewTrip.trend<0" class="tb-icon--16 tb-padding--h-4 app-color-text--red-400">
+          trending_down</mat-icon>
+      </div>
+    </div>
+    <div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayout.md="column"
+      fxLayoutAlign="space-around stretch">
+      <div class="tb-flex--align-items tb-margin--auto tb-padding--v-16" fxLayout="row">
+        <div class="trip-load tb-icon--40 ">
+          <img class="tb-image tb-color--bg-black" src="assets/svg/truck_blue.svg">
+        </div>
+        <div class="tb-padding--h-24" fxLayout="row" fxLayoutAlign="end end">
+          <p class="tb-typo--h2 tb-color--black-75  tb-font-weight--normal">{{_mTotalTrip}}</p>
+          <p class="tb-typo--h6 tb-padding--6">trips</p>
+        </div>
+      </div>
+      <!-- <div fxFlex></div> -->
+      <div class="tb-margin--v-16" fxLayout="column">
+        <p class="tb-typo--h6 tb-color--grey-600 tb-padding--v-4">Most Frequent</p>
+        <div class="tb-flex--align-items tb-padding--top-10 tb-cursor--pointer" fxLayout="row">
+          <p class="tb-typo--body1 tb-color--grey-800">Lane :</p>
+          <p class="tb-typo--body1 tb-color--grey-800 tb-padding--h-8">{{_mOverviewTrip.lane.name}}</p>
+        </div>
+        <div class="tb-flex--align-items tb-cursor--pointer" matTooltip="{{_mOverviewTrip.lane.countPercent}}%"
+          fxLayout="row">
+          <widget-progress fxFlex progressClass="widget-progress-blue" class="progress"
+            [progress]="_mOverviewTrip.lane.countPercent"></widget-progress>
+          <p class="tb-typo--h5 tb-width--40 tb-text--align-right tb-color--grey-800 tb-font-weight--bold">
+            {{_mOverviewTrip.lane.count}}</p>
+        </div>
+
+        <div class="tb-flex--align-items tb-padding--top-10" fxLayout="row">
+          <p class="tb-typo--body1 tb-color--grey-800">Customer :</p>
+          <p class="tb-typo--body1 tb-color--grey-800 tb-padding--h-8">{{_mOverviewTrip.customer.name}}</p>
+        </div>
+        <div class="tb-flex--align-items tb-cursor--pointer" matTooltip="{{_mOverviewTrip.customer.countPercent}}%"
+          fxLayout="row">
+          <widget-progress fxFlex progressClass="widget-progress-blue" class="progress"
+            [progress]="_mOverviewTrip.customer.countPercent"></widget-progress>
+          <p class="tb-typo--h5 tb-width--40 tb-text--align-right tb-color--grey-800 tb-font-weight--bold">
+            {{_mOverviewTrip.customer.count}}</p>
+        </div>
+        <div class="tb-flex--align-items tb-padding--top-10" fxLayout="row">
+          <p class="tb-typo--body1 tb-color--grey-800">Transporter :</p>
+          <p class="tb-typo--body1 tb-color--grey-800 tb-padding--h-8">{{_mOverviewTrip.vendor.name}}</p>
+        </div>
+        <div class="tb-flex--align-items tb-cursor--pointer" matTooltip="{{_mOverviewTrip.vendor.countPercent}}%"
+          fxLayout="row">
+          <widget-progress fxFlex progressClass="widget-progress-blue" class="progress"
+            [progress]="_mOverviewTrip.vendor.countPercent"></widget-progress>
+          <p class="tb-typo--h5 tb-width--40 tb-text--align-right tb-color--grey-800 tb-font-weight--bold">
+            {{_mOverviewTrip.vendor.count}}</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div
+    class="delayed-card tb-color-bg--white tb-margin--v-16 app-card--intugine tb-card--up tb-border--r4 tb-width--full tb-padding--24"
+    fxLayout="column" fxFlex="32">
+    <div fxLayout="row">
+      <p class="tb-typo--h5 tb-color--black-75 tb-font-weight--bold">Delayed</p>
+      <div fxFlex></div>
+      <div class="tb-flex--align-items" fxLayout="row" *ngIf="_mOverviewDelay && _mOverviewDelay.trend">
+        <p class="tb-typo--h6 tb-font-weight--bold" [class.app-color-text--green-400]="_mOverviewDelay.trend < 0"
+          [class.app-color-text--red-400]="_mOverviewDelay.trend > 0">{{_mOverviewDelay.trend}}</p>
+        <mat-icon *ngIf="_mOverviewDelay.trend<0" class="tb-icon--16 tb-padding--h-4 app-color-text--green-400">
+          trending_up</mat-icon>
+        <mat-icon *ngIf="_mOverviewDelay.trend>0" class="tb-icon--16 tb-padding--h-4 app-color-text--red-400">
+          trending_down</mat-icon>
+      </div>
+    </div>
+    <div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayout.md="column"
+      fxLayoutAlign="space-around stretch">
+      <div class="tb-flex--align-items tb-margin--auto tb-padding--v-16" fxLayout="row">
+        <div class="trip-load tb-icon--40 ">
+          <img class="tb-image tb-color--bg-black" src="assets/svg/truck.svg">
+        </div>
+        <div class="tb-padding--h-24" fxLayout="row" fxLayoutAlign="end end">
+          <p class="tb-typo--h2 tb-color--black-75  tb-font-weight--normal">{{_mDelay}}</p>
+          <p class="tb-typo--h6 tb-padding--6">trips</p>
+        </div>
+      </div>
+      <!-- <div fxFlex></div> -->
+      <div class="tb-margin--v-16 tb-width--full" fxLayout="column">
+        <p class="tb-typo--h6 tb-color--grey-600 tb-padding--v-4">Most Frequent</p>
+        <div class="tb-flex--align-items tb-padding--top-10" fxLayout="row">
+          <p class="tb-typo--body1 tb-color--grey-800">Lane :</p>
+          <p class="tb-typo--body1 tb-color--grey-800 tb-padding--h-8">{{_mOverviewDelay.lane.name}}</p>
+        </div>
+        <div class="tb-flex--align-items tb-cursor--pointer" 
+        matTooltip="{{_mOverviewDelay.lane.countPercent}}%" fxLayout="row">
+          <widget-progress fxFlex progressClass="widget-progress-orange" class="progress"
+            [progress]="_mOverviewDelay.lane.countPercent"></widget-progress>
+          <p class="tb-typo--h5 tb-width--40 tb-text--align-right tb-color--grey-800 tb-font-weight--bold">
+            {{_mOverviewDelay.lane.count}}</p>
+        </div>
+
+        <div class="tb-flex--align-items tb-padding--top-10" fxLayout="row">
+          <p class="tb-typo--body1 tb-color--grey-800">Customer :</p>
+          <p class="tb-typo--body1 tb-color--grey-800 tb-padding--h-8">{{_mOverviewDelay.customer.name}}</p>
+        </div>
+        <div class="tb-flex--align-items tb-cursor--pointer" 
+        matTooltip="{{_mOverviewDelay.customer.countPercent}}%" fxLayout="row">
+          <widget-progress fxFlex progressClass="widget-progress-orange" class="progress"
+            [progress]="_mOverviewDelay.customer.countPercent"></widget-progress>
+          <p class="tb-typo--h5 tb-width--40 tb-text--align-right tb-color--grey-800 tb-font-weight--bold">
+            {{_mOverviewDelay.customer.count}}</p>
+        </div>
+        <div class="tb-flex--align-items tb-padding--top-10" fxLayout="row">
+          <p class="tb-typo--body1 tb-color--grey-800">Transporter :</p>
+          <p class="tb-typo--body1 tb-color--grey-800 tb-padding--h-8">{{_mOverviewDelay.vendor.name}}</p>
+        </div>
+        <div class="tb-flex--align-items tb-cursor--pointer" 
+        matTooltip="{{_mOverviewDelay.vendor.countPercent}}%" fxLayout="row">
+          <widget-progress fxFlex progressClass="widget-progress-orange" class="progress"
+            [progress]="_mOverviewDelay.vendor.countPercent"></widget-progress>
+          <p class="tb-typo--h5 tb-width--40 tb-text--align-right tb-color--grey-800 tb-font-weight--bold">
+            {{_mOverviewDelay.vendor.count}}</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- <div fxFlex fxLayout="row" fxLayoutAlign="center center">
+
+
+      <app-chart-doughnut class="pie-chart-main" [model]="_mDelayedChartDoughnut" [isLabelHidden]="true">
+      </app-chart-doughnut>
+
+
+      <p class="tb-typo--h3 tb-color--black-75 tb-padding--h-24 tb-font-weight--normal">{{_mDelay}}</p>
+
+
+    </div> -->
+    <!-- <div fxFlex class="tb-flex--align-items" fxLayout="row" fxLayoutAlign="center center">
+        <app-chart-delayed></app-chart-delayed> 
+     <p class="tb-typo--h2 tb-color--black-75 tb-padding--h-24 tb-font-weight--normal">510</p>
+
+    </div> -->
+  </div>
+  <div
+    class="quantity-card tb-color-bg--white tb-margin--v-16 app-card--intugine tb-card--up tb-border--r4 tb-width--full tb-padding--24"
+    fxLayout="column" fxFlex="32">
+    <div fxLayout="row">
+      <p class="tb-typo--h5 tb-color--black-75 tb-font-weight--bold">Quantity (beta)</p>
+      <div fxFlex></div>
+      <div class="tb-flex--align-items" fxLayout="row">
+        <p class="tb-typo--h6 tb-font-weight--bold app-color-text--green-400">12%</p>
+        <mat-icon class="tb-icon--16 tb-padding--h-4 app-color-text--green-400">trending_up</mat-icon>
+      </div>
+    </div>
+    <div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" fxLayout.md="column"
+      fxLayoutAlign="space-around stretch">
+      <div class="tb-flex--align-items tb-margin--auto tb-padding--v-16" fxLayout="row">
+        <div class="trip-load tb-icon--40">
+          <img class="tb-image tb-color--bg-black" src="assets/svg/lory_colored.svg">
+        </div>
+        <div class="" fxLayout="row" fxLayoutAlign="end end">
+          <p class="tb-typo--h2 tb-color--black-75 tb-padding--left-24 tb-font-weight--normal">{{_mQuntity}}</p>
+          <p class="tb-typo--h6 tb-padding--6">tons</p>
+        </div>
+      </div>
+      <!-- <div fxFlex></div> -->
+      <div class="tb-margin--v-16" fxLayout="column">
+        <p class="tb-typo--h6 tb-color--grey-600 tb-padding--v-4">Most Frequent</p>
+        <div class="tb-flex--align-items tb-padding--top-10" fxLayout="row">
+          <p class="tb-typo--body1 tb-color--grey-800">Lane :</p>
+          <p class="tb-typo--body1 tb-color--grey-800 tb-padding--h-8">Del-Mum</p>
+        </div>
+        <div class="tb-flex--align-items tb-cursor--pointer" 
+        matTooltip="75%" fxLayout="row">
+          <widget-progress fxFlex progressClass="widget-progress-blue" class="progress" [progress]="75">
+          </widget-progress>
+          <p class="tb-typo--h5 tb-width--40 tb-text--align-right tb-color--grey-800 tb-font-weight--bold">20</p>
+        </div>
+
+        <div class="tb-flex--align-items tb-padding--top-10" fxLayout="row">
+          <p class="tb-typo--body1 tb-color--grey-800">Customer :</p>
+          <p class="tb-typo--body1 tb-color--grey-800 tb-padding--h-8">Xiomi</p>
+        </div>
+        <div class="tb-flex--align-items tb-cursor--pointer" 
+        matTooltip="42%" fxLayout="row">
+          <widget-progress fxFlex progressClass="widget-progress-blue" class="progress" [progress]="42">
+          </widget-progress>
+          <p class="tb-typo--h5 tb-width--40 tb-text--align-right tb-color--grey-800 tb-font-weight--bold">42</p>
+        </div>
+
+
+        <div class="tb-flex--align-items tb-padding--top-10" fxLayout="row">
+          <p class="tb-typo--body1 tb-color--grey-800">Transporter :</p>
+          <p class="tb-typo--body1 tb-color--grey-800 tb-padding--h-8">Fastrack</p>
+        </div>
+        <div class="tb-flex--align-items tb-cursor--pointer" 
+        matTooltip="66%" fxLayout="row">
+          <widget-progress fxFlex progressClass="widget-progress-blue" class="progress" [progress]="66">
+          </widget-progress>
+          <p class="tb-typo--h5 tb-width--40 tb-text--align-right tb-color--grey-800 tb-font-weight--bold">66</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

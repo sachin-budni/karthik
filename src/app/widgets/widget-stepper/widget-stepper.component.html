@@ -1,0 +1,27 @@
+<div  fxLayout="row" fxLayoutAlign="start stretch">
+  <div class="stepper" fxLayout="column" fxLayoutAlign="start center" fxFlex="33.33">
+    <div class="circle tb-padding--6 tb-border--r12 tb-theme--primary-bg tb-margin--auto-horizontal">
+      <mat-icon class="tb-icon--12 tb-color--white">check</mat-icon>
+    </div>
+    <div class="line" fxFlex *ngIf="_mIndicatorHidden"></div>
+  </div>
+
+  <div fxLayout="column" fxFlex>
+    <div class=" tb-typo--h4 tb-color--white">Patna Depot</div>
+    <div class="tb-padding--4"></div>
+    <div class=" tb-typo--h5 tb-color--grey-400">Boring Road</div>
+    <div class="tb-padding--4"></div>
+    <div fxLayout="row">
+      <div class=" tb-typo--h5 tb-font-weight--normal tb-color--blue-300">11:45</div>
+      <div class=" tb-typo--h5 tb-color--grey-500 tb-padding--h-16">16 Dec</div>
+    </div>
+    <div class="tb-padding--8"></div>
+
+  </div>
+
+  <div class="status-indicator tb-padding--right-16">
+    <div class="tb-border--r4 " [ngClass]="[_mStatusBackground]">
+      <p class="tb-typo--body1 tb-color--white tb-padding--4-8 tb-text--align-center">{{_mSpeedStatus}}</p>
+    </div>
+  </div>
+</div>

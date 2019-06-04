@@ -1,0 +1,48 @@
+$speed-low: #DB8D3F;
+$speed-high: #FB5E5E;
+$speed-average: #13C454;
+
+.tb-speed--low {
+  background-color: $speed-low;
+}
+.tb-speed--high {
+  background-color: $speed-high;
+}
+.tb-speed--average {
+  background-color: $speed-average;
+}
+
+.status-indicator{
+  min-width:56px; 
+}
+.stepper {
+  position: relative;
+  min-height: 96px;
+  // color: gray;
+}
+
+.circle {
+  // position: relative;
+  // z-index: 1;
+}
+.line {
+  width: 2px;
+  background-color: rgb(194, 194, 194);
+}
+
+// .circle:after {
+//   content: " ";
+//   position: absolute;
+//   top: 1px;
+//   bottom: 1px;
+//   width: 2px;
+//   height: 45px;
+//   background-color: rgb(194, 194, 194);
+// }
+.stepper:last-child .circle:after {
+  display: none;
+}
+
+.circle{
+  display: flex;
+}

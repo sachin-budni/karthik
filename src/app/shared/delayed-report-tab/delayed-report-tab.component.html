@@ -1,0 +1,22 @@
+<div class="report-tabs" fxLayout="row wrap">
+    <button (click)="onClicked('Lane')" [class.tb-card--thin]="_mActiveLane === true"
+      [class.tb-color--white]="_mActiveLane === true" [class.tb-color-bg--black-75]="_mActiveLane === true"
+      [class.tb-color--black-75]="_mActiveLane === false" mat-button
+      class="tab tb-typo--body1 tb-card--thin tb-color--black-75">
+      Lane
+    </button>
+    <div class="tb-padding--8"></div>
+    <button (click)="onClicked('Client')" [class.tb-card--thin]="_mActiveClient === true"
+      [class.tb-color--white]="_mActiveClient === true" [class.tb-color-bg--black-75]="_mActiveClient === true"
+      [class.tb-color--black-75]="_mActiveClient === false" mat-button class="tab tb-typo--body1  tb-color--black-75">
+      Client
+    </button>
+ 
+    <div class="tb-padding--8"></div>
+    <button (click)="onClicked('Transporter')" [class.tb-card-thin]="_mActiveTransporter === true"
+      [class.tb-color--white]="_mActiveTransporter === true"
+      [class.tb-color-bg--black-75]="_mActiveTransporter === true"
+      [class.tb-color--black-75]="_mActiveTransporter === false" mat-button
+      class="tab tb-typo--body1 tb-color--black-75">
+      Transporter </button> 
+  </div>

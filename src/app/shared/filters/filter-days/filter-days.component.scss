@@ -1,0 +1,19 @@
+.filter-day{
+    border: 1px solid rgb(184, 182, 182);
+    max-width: 120px;
+
+}
+$resXXL: 1280px;
+$resXL: 1170px;
+$resL: 991px;
+$resM: 768px;
+$resS: 660px;
+$resXS: 500px;
+$resXXS: 435px;
+$resMin: 320px;
+
+@media screen and (max-width: $resXXS) {
+    .filter-day{
+        max-width: 100px;
+    }
+}

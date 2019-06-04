@@ -1,0 +1,15 @@
+<div class="main tb-color-bg--white tb-position-relative" fxLayoutAlign="center center" fxLayout="row">
+    <div class="auth " fxFlex="35" fxFlex.xs="100" fxFlex.sm="100" fxFlex.md="100" fxFlex.lt-md="100">
+        <div ngClass="tb-padding--72 auth-container" ngClass.gt-xs="tb-padding--40 auth-container"
+            ngClass.xs="tb-padding--28 auth-container">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    <div class="map " fxFlex fxHide.lt-md="true" fxHide.sm="true" fxHide.xs="true" fxHide.md="true">
+        <img class="tb-image" src="./assets/img/auth_map.png" />
+    </div>
+    <section class="tb-top tb-width--full tb-position--fixed" *ngIf="_mInProgress">
+        <mat-progress-bar [color]="'primary'" mode="indeterminate">
+        </mat-progress-bar>
+    </section>
+</div>

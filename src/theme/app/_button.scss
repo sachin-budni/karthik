@@ -1,0 +1,48 @@
+.tb-button {
+    &-white {
+        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+        font-size: 12px;
+        border-radius: 2px;
+        text-align: center;
+        padding: 12px 28px;
+        background-color: white;
+    }
+    &-primary {
+        font-size: 12px;
+        border-radius: 2px;
+        text-align: center;
+        padding: 12px 28px;
+        background-color: $tb-theme-primary;
+    }
+    &-secondary {
+        font-size: 12px;
+        border-radius: 2px;
+        text-align: center;
+        padding: 12px 28px;
+        color: white;
+        background-color: $tb-theme-secondary;
+    }
+    
+        // &-accent {
+    //     font-size: 12px;
+    //     border-radius: 2px;
+    //     text-align: center;
+    //     padding: 12px 28px;
+    //     color: white;
+    //     background-color: $tb-theme-accent;
+    // }
+    &-unset-width {
+        width: unset;
+        min-width: unset !important;
+        line-height: 32px !important;
+    }
+    &-padding-12 {
+        padding: 0 12px !important;
+    }
+    &-padding-8 {
+        padding: 0 8px !important;
+    }
+    &-padding-4 {
+        padding: 4px !important;
+    }
+}
